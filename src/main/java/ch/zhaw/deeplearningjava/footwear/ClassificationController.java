@@ -16,6 +16,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.io.Reader;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -70,6 +72,11 @@ public class ClassificationController {
                 ObjectNode resultNode = mapper.createObjectNode();
 
                 Integer classId = node.get("className").asInt();
+                
+                Double probability = node.get("probability").asDouble();
+                probability = round(probability * 100, 2);
+                String probabilityText = probability.toString() + "%";
+
                 String label = idToLabelMap.get(classId);
 
                 String imagePath = "/flower-images/" + classId + "/image.jpg";
@@ -77,7 +84,7 @@ public class ClassificationController {
 
                 resultNode.put("className", classId.toString());
                 resultNode.put("label", label);
-                resultNode.put("probability", node.get("probability").asText());
+                resultNode.put("probability", probabilityText);
                 resultNode.put("imagePath", imagePath);
                 
                 resultsArray.add(resultNode);
@@ -85,6 +92,14 @@ public class ClassificationController {
             }
         }
         return mapper.writeValueAsString(resultsArray);
+    }
+
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+    
+        BigDecimal bd = BigDecimal.valueOf(value);
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 
 }
