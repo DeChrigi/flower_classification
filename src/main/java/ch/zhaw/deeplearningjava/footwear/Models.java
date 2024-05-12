@@ -23,18 +23,19 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+
 /** A helper class loads and saves model. */
 public final class Models {
 
     // the number of classification labels: boots, sandals, shoes, slippers
-    public static final int NUM_OF_OUTPUT = 4;
+    public static final int NUM_OF_OUTPUT = 102;
 
     // the height and width for pre-processing of the image
     public static final int IMAGE_HEIGHT = 100;
     public static final int IMAGE_WIDTH = 100;
 
     // the name of the model
-    public static final String MODEL_NAME = "shoeclassifier";
+    public static final String MODEL_NAME = "flowerclassifier";
 
     private Models() {}
 

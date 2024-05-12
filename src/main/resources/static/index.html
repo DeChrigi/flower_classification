@@ -4,16 +4,19 @@
 <head>
     <title>Image Classification</title>
     <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Open+Sans&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css"> <!-- Link zur neuen CSS-Datei -->
     <script src="script.js" async></script>
 </head>
 
 <body>
 
     <div class="container-fluid">
-        <h1>Footwear Classification</h1>
-        <p>DeepJavaLibrary (DJL) Demonstration by mosa</p>
+        <h1>Flower Classification</h1>
+        <p>DeepJavaLibrary (DJL)</p>
 
         <form>
             <div class="form-group">
@@ -24,16 +27,12 @@
         </form>
 
         <div id="answerPart" style="visibility: hidden;">
-            <p><b>Answer:</b>
+            <p id="previewPart"><b>Analyzed Image:</b></p>
+            <p><img id="preview" width="200" height="200" src="#" alt="preview"></p>
+            <p><b>Answer:</b></p>
             <div id="answer"></div>
-            </p>
-
-            <p id="previewPart"><b>Analyzed Image:</b>
-            <p><img id="preview" width="300" src="#" alt="preview" /></p>
-            </p>
         </div>
     </div>
-
 
 </body>
 

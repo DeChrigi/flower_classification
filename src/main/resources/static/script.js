@@ -34,8 +34,26 @@ function checkFiles(files) {
     }).then(
         response => {
             console.log(response)
-            response.text().then(function (text) {
-                answer.innerHTML = text;
+            response.json().then(function (data) {
+                const container = document.getElementById('answer');
+                container.innerHTML = ""; // Löscht den vorherigen Inhalt
+                data.forEach(item => {
+                    const entry = document.createElement('div');
+                    entry.className = 'result-entry';
+            
+                    const label = document.createElement('p');
+                    label.textContent = `${item.label}, Wahrscheinlichkeit: ${item.probability}`;
+            
+                    const image = document.createElement('img');
+                    image.src = item.imagePath;
+                    image.alt = `Bild von ${item.imagePath}`;
+                    image.width = 200; // Breite anpassen
+                    image.height = 200; // Höhe anpassen
+            
+                    entry.appendChild(label);
+                    entry.appendChild(image);
+                    container.appendChild(entry);
+                });
             });
 
         }

@@ -1,0 +1,27 @@
+body {
+    background: url('https://c4.wallpaperflare.com/wallpaper/952/982/423/flowers-flower-butterfly-colorful-floral-hd-wallpaper-preview.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-family: 'Merriweather', serif;
+    color: #5a4e4d;
+}
+.container-fluid {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.form-group label {
+    color: #6a5d5d;
+}
+input[type="file"] {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+#answerPart {
+    color: #5a4e4d;
+}

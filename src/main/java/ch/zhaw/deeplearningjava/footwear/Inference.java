@@ -52,4 +52,6 @@ public class Inference {
         Classifications predictResult = this.predictor.predict(img);
         return predictResult;
     }
+
+    
 }
