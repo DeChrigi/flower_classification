@@ -37,7 +37,7 @@ public class ClassificationController {
 
     public ClassificationController() {
         // CSV-Daten laden und in Map speichern
-        try (Reader reader = new FileReader("C:/workarea/mdm/Flower Classification/flower_classification/flower-labels/labels.csv");
+        try (Reader reader = new FileReader("./flower-labels/labels.csv");
                 CSVParser csvParser = new CSVParser(reader,
                         CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim())) {
 
